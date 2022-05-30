@@ -9,8 +9,21 @@ import java.util.Collections;
 import java.util.List;
 public class EvenOddArray {
 
+  //왼쪽에 짝수, 오른쪽에 홀수를 배열하라
   public static void evenOdd(List<Integer> A) {
     // TODO - you fill in here.
+    int left = 0;
+    int right = A.size()-1;
+
+    while(left < right){
+      if(A.get(left)%2 == 1){//홀수
+        Collections.swap(A, left, right);
+        right--;
+      } else {//짝수
+        left++;
+      }
+    }
+
     return;
   }
   @EpiTest(testDataFile = "even_odd_array.tsv")
