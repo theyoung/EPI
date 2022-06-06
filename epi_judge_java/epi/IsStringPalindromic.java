@@ -6,6 +6,13 @@ public class IsStringPalindromic {
 
   public static boolean isPalindromic(String s) {
     // TODO - you fill in here.
+    int left = 0;
+    int right = s.length()-1;
+
+    while(left < right){
+      if(s.charAt(left++) != s.charAt(right--)) return false;
+    }
+
     return true;
   }
 
