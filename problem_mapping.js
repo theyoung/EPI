@@ -302,7 +302,7 @@ problem_mapping = {
                 "total": 24
             },
             "Java: PrimeSieve.java": {
-                "passed": 0,
+                "passed": 24,
                 "total": 24
             },
             "Python: prime_sieve.py": {
@@ -316,7 +316,7 @@ problem_mapping = {
                 "total": 101
             },
             "Java: ApplyPermutation.java": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Python: apply_permutation.py": {
@@ -330,7 +330,7 @@ problem_mapping = {
                 "total": 2001
             },
             "Java: NextPermutation.java": {
-                "passed": 0,
+                "passed": 2001,
                 "total": 2001
             },
             "Python: next_permutation.py": {
@@ -414,7 +414,7 @@ problem_mapping = {
                 "total": 745
             },
             "Java: IsValidSudoku.java": {
-                "passed": 0,
+                "passed": 745,
                 "total": 745
             },
             "Python: is_valid_sudoku.py": {
@@ -428,7 +428,7 @@ problem_mapping = {
                 "total": 51
             },
             "Java: SpiralOrdering.java": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Python: spiral_ordering.py": {
@@ -442,7 +442,7 @@ problem_mapping = {
                 "total": 51
             },
             "Java: MatrixRotation.java": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Python: matrix_rotation.py": {
@@ -456,7 +456,7 @@ problem_mapping = {
                 "total": 35
             },
             "Java: PascalTriangle.java": {
-                "passed": 0,
+                "passed": 35,
                 "total": 35
             },
             "Python: pascal_triangle.py": {
@@ -472,7 +472,7 @@ problem_mapping = {
                 "total": 10000
             },
             "Java: IsStringPalindromic.java": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Python: is_string_palindromic.py": {
@@ -486,7 +486,7 @@ problem_mapping = {
                 "total": 15002
             },
             "Java: StringIntegerInterconversion.java": {
-                "passed": 0,
+                "passed": 15002,
                 "total": 15002
             },
             "Python: string_integer_interconversion.py": {
@@ -500,7 +500,7 @@ problem_mapping = {
                 "total": 20001
             },
             "Java: ConvertBase.java": {
-                "passed": 0,
+                "passed": 20001,
                 "total": 20001
             },
             "Python: convert_base.py": {
@@ -514,7 +514,7 @@ problem_mapping = {
                 "total": 10000
             },
             "Java: SpreadsheetEncoding.java": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Python: spreadsheet_encoding.py": {
@@ -528,7 +528,7 @@ problem_mapping = {
                 "total": 501
             },
             "Java: ReplaceAndRemove.java": {
-                "passed": 0,
+                "passed": 501,
                 "total": 501
             },
             "Python: replace_and_remove.py": {
@@ -542,7 +542,7 @@ problem_mapping = {
                 "total": 305
             },
             "Java: IsStringPalindromicPunctuation.java": {
-                "passed": 0,
+                "passed": 305,
                 "total": 305
             },
             "Python: is_string_palindromic_punctuation.py": {
