@@ -7,6 +7,24 @@ public class IsListCyclic {
 
   public static ListNode<Integer> hasCycle(ListNode<Integer> head) {
     // TODO - you fill in here.
+    ListNode<Integer> slow = head;
+    ListNode<Integer> fast = head;
+
+    while (fast != null && fast.next != null && fast.next.next != null) {
+      slow = slow.next;
+      fast = fast.next.next;
+
+      if(slow == fast){
+        slow = head;
+
+        while(slow != fast){
+          slow = slow.next;
+          fast = fast.next;
+        }
+        return slow;
+      }
+    }
+
     return null;
   }
   @EpiTest(testDataFile = "is_list_cyclic.tsv")

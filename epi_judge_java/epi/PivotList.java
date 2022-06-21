@@ -11,7 +11,36 @@ public class PivotList {
 
   public static ListNode<Integer> listPivoting(ListNode<Integer> l, int x) {
     // TODO - you fill in here.
-    return null;
+    var leftRoot = new ListNode<Integer>(0,null);
+    var leftNode = leftRoot;
+    var rightRoot = new ListNode<Integer>(0, null);
+    var rightNode = rightRoot;
+    var centerRoot = new ListNode<Integer>(0, null);
+    var centerNode = centerRoot;
+
+    var node = l;
+
+    while (node != null) {
+      var nextNode = node.next;
+      node.next = null;
+
+      if(node.data < x){
+        leftNode.next = node;
+        leftNode = leftNode.next;
+      } else if(node.data == x){
+        centerNode.next = node;
+        centerNode = centerNode.next;
+      } else {
+        rightNode.next = node;
+        rightNode = rightNode.next;
+      }
+      node = nextNode;
+    }
+
+    centerNode.next = rightRoot.next;
+    leftNode.next = centerRoot.next;
+
+    return leftRoot.next;
   }
   public static List<Integer> linkedToList(ListNode<Integer> l) {
     List<Integer> v = new ArrayList<>();

@@ -7,6 +7,7 @@ public class DeleteFromList {
   // Delete the node immediately following aNode. Assumes aNode is not a tail.
   public static void deleteList(ListNode<Integer> aNode) {
     // TODO - you fill in here.
+    aNode.next = aNode.next.next;
     return;
   }
   @EpiTest(testDataFile = "delete_from_list.tsv")
