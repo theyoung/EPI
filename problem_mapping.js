@@ -1062,7 +1062,7 @@ problem_mapping = {
                 "total": 3849
             },
             "Java: SumRootToLeaf.java": {
-                "passed": 0,
+                "passed": 3849,
                 "total": 3849
             },
             "Python: sum_root_to_leaf.py": {
@@ -1076,7 +1076,7 @@ problem_mapping = {
                 "total": 7690
             },
             "Java: PathSum.java": {
-                "passed": 0,
+                "passed": 7690,
                 "total": 7690
             },
             "Python: path_sum.py": {
@@ -1090,7 +1090,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Java: TreeInorder.java": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Python: tree_inorder.py": {
@@ -1104,7 +1104,7 @@ problem_mapping = {
                 "total": 3851
             },
             "Java: KthNodeInTree.java": {
-                "passed": 0,
+                "passed": 3851,
                 "total": 3851
             },
             "Python: kth_node_in_tree.py": {
