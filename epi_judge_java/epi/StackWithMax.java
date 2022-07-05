@@ -3,29 +3,74 @@ import epi.test_framework.EpiTest;
 import epi.test_framework.EpiUserType;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 public class StackWithMax {
+  private static class CachedElement<T>{
+    T elem;
+    T max;
+
+    public CachedElement(T elem, T max){
+      this.elem = elem;
+      this.max = max;
+    }
+
+    public T getElem() {
+      return elem;
+    }
+
+    public void setElem(T elem) {
+      this.elem = elem;
+    }
+
+    public T getMax() {
+      return max;
+    }
+
+    public void setMax(T max) {
+      this.max = max;
+    }
+  }
 
   public static class Stack {
+    Deque<CachedElement<Integer>> list = new LinkedList<>();
     public boolean empty() {
       // TODO - you fill in here.
-      return true;
+      return list.isEmpty();
     }
     public Integer max() {
       // TODO - you fill in here.
-      return 0;
+      if(list.size() < 1) return Integer.MIN_VALUE;
+      return list.peek().getMax();
     }
     public Integer pop() {
       // TODO - you fill in here.
-      return 0;
+      return list.pop().getElem();
     }
     public void push(Integer x) {
       // TODO - you fill in here.
-      return;
+      list.push(new CachedElement<>(x,this.max() < x? x : this.max()));
     }
   }
+
+  @Test
+  public void test(){
+    StackWithMax.Stack stack = new StackWithMax.Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    Assertions.assertEquals(3, stack.max());
+    Assertions.assertEquals(3, stack.pop());
+    Assertions.assertEquals(2, stack.pop());
+    Assertions.assertEquals(1, stack.max());
+
+  }
+
   @EpiUserType(ctorParams = {String.class, int.class})
   public static class StackOp {
     public String op;

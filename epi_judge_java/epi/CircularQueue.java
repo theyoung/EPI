@@ -4,22 +4,49 @@ import epi.test_framework.EpiUserType;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
+
 public class CircularQueue {
 
   public static class Queue {
-    public Queue(int capacity) {}
+    Integer[] queue;
+    int length = 0;
+    int head = 0;
+    int tail = 0;
+
+    public Queue(int capacity) {
+      this.queue = new Integer[capacity];
+    }
     public void enqueue(Integer x) {
       // TODO - you fill in here.
-      return;
+      if(length == queue.length){
+        Collections.rotate(Arrays.asList(queue), -head);
+        head = 0;
+        tail = length;
+        queue = Arrays.copyOf(queue, (int) (queue.length * 2));
+      }
+
+      queue[tail] = x;
+      tail = (tail + 1) % queue.length;
+      length++;
     }
     public Integer dequeue() {
       // TODO - you fill in here.
-      return 0;
+      if(0 < length){
+        length--;
+        int result = queue[head];
+        queue[head] = null;
+        head = (head + 1) % queue.length;
+        return result;
+      }
+      throw new NoSuchElementException("NO!");
     }
     public int size() {
       // TODO - you fill in here.
-      return 0;
+      return length;
     }
     @Override
     public String toString() {

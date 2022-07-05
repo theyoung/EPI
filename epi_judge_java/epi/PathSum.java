@@ -4,10 +4,12 @@ import epi.test_framework.GenericTest;
 public class PathSum {
   @EpiTest(testDataFile = "path_sum.tsv")
 
-  public static boolean hasPathSum(BinaryTreeNode<Integer> tree,
-                                   int remainingWeight) {
+  public static boolean hasPathSum(BinaryTreeNode<Integer> tree, int remainingWeight) {
     // TODO - you fill in here.
-    return true;
+    if(tree == null) return false;
+    if(tree.left == null && tree.right == null && remainingWeight == tree.data) return true;
+
+    return hasPathSum(tree.left, remainingWeight-tree.data) || hasPathSum(tree.right, remainingWeight-tree.data);
   }
 
   public static void main(String[] args) {

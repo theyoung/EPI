@@ -3,6 +3,9 @@ import epi.test_framework.EpiTest;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 import epi.test_framework.TimedExecutor;
+
+import java.util.*;
+
 public class KthNodeInTree {
   public static class BinaryTreeNode<T> extends TreeLike<T, BinaryTreeNode<T>> {
     public T data;
@@ -35,7 +38,29 @@ public class KthNodeInTree {
 
   public static BinaryTreeNode<Integer>
   findKthNodeBinaryTree(BinaryTreeNode<Integer> tree, int k) {
-    // TODO - you fill in here.
+    Deque<BinaryTreeNode<Integer>> deque = new LinkedList<>();
+//    var result = new ArrayList<BinaryTreeNode<Integer>>();
+    var cur = tree;
+
+    while (cur != null && k <= cur.size) {
+      //1. 왼쪽의 갯수 + 1 = cur
+      //2. k <= 왼쪽의 갯수 = cur.left
+      //3. (왼쪽의 갯수 + 1) < k = k - (왼쪽의 갯수+1) = cur.right
+      //4. null size = 0
+      int leftSize = cur.left != null? cur.left.size : 0;
+      int rightSize = cur.right != null? cur.right.size : 0;
+
+      if(leftSize + 1 == k) return cur;
+
+      if(k <= leftSize){
+        cur = cur.left;
+      } else if(leftSize+1 < k){
+        k = k - (leftSize+1);
+        cur = cur.right;
+      }
+    }
+
+//    System.out.println(Arrays.toString(result.stream().map((node)->(node.data)).toArray()));
     return null;
   }
   public static BinaryTreeNode<Integer>

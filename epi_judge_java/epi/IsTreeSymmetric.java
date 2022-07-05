@@ -6,7 +6,16 @@ public class IsTreeSymmetric {
 
   public static boolean isSymmetric(BinaryTreeNode<Integer> tree) {
     // TODO - you fill in here.
-    return true;
+    if(tree == null) return true;
+    return helper(tree.left, tree.right);
+  }
+
+  public static boolean helper(BinaryTreeNode<Integer> left, BinaryTreeNode<Integer> right){
+    if(left == null && right == null) return true;
+    if(left != null && right == null) return false;
+    if(left == null && right != null) return false;
+    if(!left.data.equals(right.data)) return false;
+    return helper(left.left, right.right) && helper(left.right, right.left);
   }
 
   public static void main(String[] args) {
